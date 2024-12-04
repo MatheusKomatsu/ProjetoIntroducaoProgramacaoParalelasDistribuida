@@ -107,10 +107,11 @@ int main(int argc, char **argv)
   }
 
   quicksort(result, 0, numResults - 1);
+  gettimeofday(&stop, NULL);
   for (i = 0; i < numResults; i++)
     printf("%ld\n", result[i]);
 
-  gettimeofday(&stop, NULL);
+
   double t = (((double)stop.tv_sec) * 1000.0 + ((double)(stop.tv_usec) / 1000.0)) -
              (((double)start.tv_sec) * 1000.0 + ((double)(start.tv_usec) / 1000.0));
 
